@@ -23,7 +23,7 @@ res <- pblapply(X=rev(1:30)*10, FUN=runLHS, 10, cl=1)
 res <- do.call(rbind, res)
 #saveRDS(object=res, file="lhs.rds") # In case you want to save the results
 # res <- readRDS(file="lhs.rds")
-stop("Stop here for the moment")
+# stop("Stop here for the moment")
 
 plotData <- res[which(res$elapsed>.01),]
 p <- ggplot(plotData,aes(x=n,y=user)) +
